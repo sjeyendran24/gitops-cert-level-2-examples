@@ -1,8 +1,7 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-deployment
+  name: sealed-secret
 spec:
   replicas: 1
   selector:
@@ -18,3 +17,4 @@ spec:
         image: docker.io/kostiscodefresh/gitops-simple-app:v1.0
         ports:
         - containerPort: 8080
+          name: sealed-secrets-port
